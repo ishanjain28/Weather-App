@@ -36,23 +36,59 @@ var LocationIconBtn = React.createClass({
 var CheckWeatherBtn = React.createClass({
     render: function () {
         return (
-            <a id="checkWeather" href="#" className="checkWeatherBtn">CHECK WEATHER</a>
+            <a
+                id="checkWeather"
+                href="#"
+                className="checkWeatherBtn"
+                onClick={this.props.handleThat}>
+                CHECK WEATHER
+            </a>
         );
     }
 });
 
 var LocationBlock = React.createClass({
+    getInitialState: function () {
+      return {address: 'Example: 110001,IN'};
+    },
+    handleChange: function (e) {
+        this.setState({address: e.target.address});
+    },
+    handleWeatherCheck: function (address) {
+        var key = "b616bc06fdb9ef3608e2125feccad90a";
+        if(!address) {
+            var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + {address} + "&appid=" + key;
+        } else {
+            console.log("Enter Address");
+        }
+
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            }.bind(this),
+            error: function (xhr, status, err) {
+                console.error(url, err.toString());
+            }.bind(this)
+        });
+    },
     render: function () {
         return (
-           <div className="locSource animated slide" id="LocationBlock">
-               <label>Enter your location: </label>
-               <input id="locationInputBox" className="locationInputBox" type="text" placeholder="Enter your pincode and Country Code seperated by comma" />
-               <LocationIconBtn />
-               <br />
-               <p className="currentLoc">Latitude: {crd.latitude} ,Longitude: {crd.longitude}</p>
-               <p className="locExample">Example: 247667, IN</p>
-               <br />
-               <CheckWeatherBtn />
+           <div className="locationBlock animated slide" id="LocationBlock">
+               <div className="locationBlockContainer">
+                <label>Enter your location: </label>
+                <input
+                    id="locationInputBox"
+                    className="locationInputBox"
+                    type="text"
+                    value={this.state.address}
+                    onChange={this.handleChange}
+                />
+                <LocationIconBtn />
+                <br />
+                <CheckWeatherBtn handleThat={this.handleWeatherCheck(this.state.address)} />
+               </div>
            </div>
         );
    }

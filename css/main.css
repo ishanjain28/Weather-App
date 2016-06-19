@@ -19,6 +19,18 @@ html, body  {
     height: 100%;
     background: rgba(100, 100, 100, 0.5)
 }
+::-webkit-input-placeholder {
+    color: white;
+}
+:-moz-placeholder   {
+    color: white;
+}
+::-moz-placeholder  {
+    color: white;
+}
+:-ms-input-placeholder  {
+    color: white;
+}
 .spinnerBlock   {
     text-align: center;
     position: absolute;
@@ -45,9 +57,9 @@ html, body  {
     margin: 0;
     font-size: 50px;
     font-family: 'open sans', sans-serif;
+    letter-spacing: 4px;
 }
-.locSource  {
-    border: 1px solid #000;
+.locationBlock  {
     text-align: center;
     position: absolute;
     height: 120px;
@@ -60,28 +72,26 @@ html, body  {
     font-family: 'open sans', sans-serif;
     transition: 1s;
 }
+.locationBlockContainer {
+    position: relative;
+    display: block;
+}
 .locationInputBox   {
-    width: 430px;
     padding: 5px;
     color: #f0f0f0;
     border: 1px solid #000;
+    margin-bottom: 30px;
+    margin-right: 5px;
 }
-
 .getLocationIcon, .getLocationIcon:hover .getLocationIcon:active, .getLocationIcon:visited    {
     text-decoration: none;
     color: #000;
 }
-.currentLoc {
-    font-family: 'open sans', sans-serif;
-}
-.locExample {
-    font-family: 'open sans', sans-serif;
-}
 .checkWeatherBtn {
     font-family: 'open sans', sans-serif;
-    padding: 10px;
     color: #f0f0f0;
     border: 2px solid #000;
     text-decoration: none;
     letter-spacing: 3px;
+    padding: 10px;
 }
