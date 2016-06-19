@@ -36,34 +36,25 @@ var LocationIconBtn = React.createClass({
 var CheckWeatherBtn = React.createClass({
     render: function () {
         return (
-            <a disabled={this.props.lat && this.props.long} id="checkWeather" href="#" onClick={this.props.handleClick} className="checkWeatherBtn">CHECK WEATHER</a>
+            <a id="checkWeather" href="#" className="checkWeatherBtn">CHECK WEATHER</a>
         );
     }
 });
 
 var LocationBlock = React.createClass({
-    getInitialState: function () {
-        return ({
-            latitude: 54,
-            longitude: 78
-        });
-    },
-    getLocation: function () {
-
-    },
     render: function () {
-       return (
+        return (
            <div className="locSource animated slide" id="LocationBlock">
                <label>Enter your location: </label>
                <input id="locationInputBox" className="locationInputBox" type="text" placeholder="Enter your pincode and Country Code seperated by comma" />
                <LocationIconBtn />
                <br />
-               <p className="currentLoc">Latitude: {this.props.latitude} ,Longitude: {this.props.longitude}</p>
+               <p className="currentLoc">Latitude: {crd.latitude} ,Longitude: {crd.longitude}</p>
                <p className="locExample">Example: 247667, IN</p>
                <br />
                <CheckWeatherBtn />
            </div>
-       )
+        );
    }
 });
 var RootBlock = React.createClass({
