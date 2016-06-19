@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+html, body  {
+    transition: 1s;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#data-root    {
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 100, 0.5)
+}
+.spinnerBlock   {
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'open sans', sans-serif;
+    transition: 1s;
+    font-size: 40px;
+    display: none;
+}
+.navBar {
+    transition: 1s;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    margin: 0;
+    font-size: 50px;
+    font-family: 'open sans', sans-serif;
+}
+.locSource  {
+    border: 1px solid #000;
+    text-align: center;
+    position: absolute;
+    height: 120px;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'open sans', sans-serif;
+    transition: 1s;
+}
+.locationInputBox   {
+    width: 430px;
+    padding: 5px;
+    color: #f0f0f0;
+    border: 1px solid #000;
+}
+
+.getLocationIcon, .getLocationIcon:hover .getLocationIcon:active, .getLocationIcon:visited    {
+    text-decoration: none;
+    color: #000;
+}
+.currentLoc {
+    font-family: 'open sans', sans-serif;
+}
+.locExample {
+    font-family: 'open sans', sans-serif;
+}
+.checkWeatherBtn {
+    font-family: 'open sans', sans-serif;
+    padding: 10px;
+    color: #f0f0f0;
+    border: 2px solid #000;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
