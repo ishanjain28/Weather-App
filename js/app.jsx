@@ -56,8 +56,8 @@ var LocationBlock = React.createClass({
     },
     handleWeatherCheck: function (address) {
         var key = "b616bc06fdb9ef3608e2125feccad90a";
-        if(!address) {
-            var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + {address} + "&appid=" + key;
+        if(address) {
+            var url = "http://api.openweathermap.org/data/2.5/weather?zip=110001,IN" + "&appid=" + key;
         } else {
             console.log("Enter Address");
         }
@@ -98,7 +98,7 @@ var RootBlock = React.createClass({
         return (
             <div>
                 <Navbar />
-                <LocationBlock />
+                <Locat
                 <Spinner />
             </div>
         );
