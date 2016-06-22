@@ -3,7 +3,6 @@
     padding: 0;
     border: 0;
     font-size: 100%;
-    vertical-align: baseline;
     background: transparent;
 }
 html, body  {
@@ -13,10 +12,10 @@ html, body  {
     margin: 0;
     padding: 0;
 }
-#data-root    {
+#root    {
     width: 100%;
     height: 100%;
-    background: rgba(100, 100, 100, 0.5)
+    background: rgb(100, 100, 100)
 }
 ::-webkit-input-placeholder {
     color: white;
@@ -58,15 +57,43 @@ html, body  {
     font-family: 'open sans', sans-serif;
     letter-spacing: 4px;
 }
-.getLocationIcon, .getLocationIcon:hover .getLocationIcon:active, .getLocationIcon:visited    {
-    text-decoration: none;
-    color: #000;
+.EnterLocation    {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+    margin-top: 40vh;
 }
-.checkWeatherBtn {
+.LocationInput   {
     font-family: 'open sans', sans-serif;
-    color: #f0f0f0;
-    border: 2px solid #000;
+}
+.LocationInputTextWrapper    {
+    display: inline-block;
+    border: 1px solid #000;
+}
+.LocationInputText    {
+    font-size: 39px;
+    padding: 3px;
+}
+.GetLocationBtn    {
+    display: inline-block;
+    margin: 5px;
+}
+.location-icon    {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.GetWeatherBtn    {
+    text-align: center;
     text-decoration: none;
-    letter-spacing: 3px;
-    padding: 10px;
+    font-family: 'open sans', sans-serif;
+    border: 2px solid #000;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin: 10px;
+    padding: 15px;
+    letter-spacing: 2px;
 }

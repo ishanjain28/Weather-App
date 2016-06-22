@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hi from './App';
+import RootBlock from './App';
 
-ReactDOM.render(<Hi />, document.getElementById('root'));
+ReactDOM.render(<RootBlock />, document.getElementById('root'));
