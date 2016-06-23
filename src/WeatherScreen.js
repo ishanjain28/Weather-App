@@ -1,16 +1,27 @@
 import React from 'react';
-import $ from '../js/jquery-2.2.4.min.js';
 import EnterLocation from './EnterLocation';
 
 
-var WeatherScreen = React.createClass({
+const WeatherScreen = React.createClass({
     render: function()  {
         return (
             <div className="WeatherScreen">
-                <EnterLocation />
+                <Navbar />
             </div>
         );
     }
 });
 
+const Navbar = React.createClass({
+   render: function () {
+       return (
+         <div className="WSNavbar">
+             <div className="Brand">
+                 <i className="fa fa-warning fa-2x"></i> Weather
+             </div>
+             <EnterLocation class="WSEnterLocation" id="WSEnterLocation" />
+         </div>
+       );
+   }
+});
 export default WeatherScreen;

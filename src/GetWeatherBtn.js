@@ -32,14 +32,8 @@ const GetWeatherBtn = React.createClass({
                 success: function (data) {
                     this.setState({weatherData: data});
                     console.log(this.state.weatherData);
-                    $('.navBar').animate({
-                        height: "30px"
-                    });
-                }.bind(this),
+                    }.bind(this),
                 error: function (xhr, status, err)  {
-                    $('.navBar').animate({
-                        height: "30px"
-                    });
                     console.log(url, err.toString());
                 }.bind(this)
             });

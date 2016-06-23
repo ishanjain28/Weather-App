@@ -29,7 +29,7 @@ const FrontLandingWrapper = React.createClass({
     render: function()  {
         return (
             <div className="FrontLandingWrapper">
-                <EnterLocation />
+                <EnterLocation class="EnterLocation" id="EnterLocation" />
                 <SpinnerBlock />
             </div>
         )
