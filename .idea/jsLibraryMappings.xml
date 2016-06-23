@@ -2,6 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{Weather-App node_modules}" />
+    <file url="file://$PROJECT_DIR$/src/GetWeatherBtn.js" libraries="{Weather-App node_modules, jquery-DefinitelyTyped, react-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

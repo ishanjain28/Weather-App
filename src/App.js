@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from '../js/jquery-2.2.4.min.js';
 import WeatherScreen from './WeatherScreen';
 import EnterLocation from './EnterLocation';
 import SpinnerBlock from './SpinnerBlock';
