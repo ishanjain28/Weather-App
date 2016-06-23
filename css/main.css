@@ -17,6 +17,7 @@ html, body  {
     height: 100%;
     background: rgb(100, 100, 100)
 }
+/*
 ::-webkit-input-placeholder {
     color: white;
 }
@@ -28,18 +29,13 @@ html, body  {
 }
 :-ms-input-placeholder  {
     color: white;
-}
+}*/
 .spinnerBlock   {
     text-align: center;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     font-family: 'open sans', sans-serif;
     transition: 1s;
     font-size: 40px;
+    margin: 40px;
     display: none;
 }
 .navBar {
@@ -57,14 +53,29 @@ html, body  {
     font-family: 'open sans', sans-serif;
     letter-spacing: 4px;
 }
+.FrontLandingWrapper    {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.EnterLocationWrapper    {
+    text-align: center;
+    background: #ffffff;
+}
 .EnterLocation    {
     font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: #ffffff;
-    margin-top: 40vh;
+}
+.InputStatus    {
+    font-size: 30px;
+    font-family: 'open sans', sans-serif;
+    display: block;
 }
 .LocationInput   {
     font-family: 'open sans', sans-serif;
@@ -74,12 +85,14 @@ html, body  {
     border: 1px solid #000;
 }
 .LocationInputText    {
-    font-size: 39px;
-    padding: 3px;
+    font-size: 40px;
+    padding: 2px;
 }
 .GetLocationBtn    {
     display: inline-block;
     margin: 5px;
+    border-left: 1px solid #000;
+    padding: 5px;
 }
 .location-icon    {
     padding: 0;
