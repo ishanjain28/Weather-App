@@ -46,7 +46,7 @@ const EnterLocation = React.createClass({
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
         });
-        localStorage.coords = pos.coords.toString();
+        console.log("Coordinates Successfully retrieved " + 'Lat: ' + pos.coords.latitude + ' Long: ' + pos.coords.longitude + ' Accuracy: ' + pos.coords.accuracy + 'meteres');
     },
     fail: function (err)    {
         console.error('Error(' + err.code + '): ' + err.message)
@@ -69,12 +69,9 @@ const EnterLocation = React.createClass({
     },
     render: function()  {
         return (
-            <div className="EnterLocationWrapper">
-                <div className="EnterLocation" id="EnterLocation">
-                    <LocationInput getLocation={this.getLocation}/>
-                    <GetWeatherBtn lat={this.state.latitude} long={this.state.longitude} />
-                </div>
-                <InputStatus lat={this.state.latitude} long={this.state.longitude}/>
+            <div className="EnterLocation" id="EnterLocation">
+                <LocationInput getLocation={this.getLocation}/>
+                <GetWeatherBtn lat={this.state.latitude} long={this.state.longitude} />
             </div>
         );
     }
@@ -130,14 +127,21 @@ const GetWeatherBtn = React.createClass({
     },
     getWeather: function()  {
         if(this.props.lat && this.props.long)   {
-            var key = "";
-            var url = "";
+            var key = "5f6b52407f05c81ab142559b38446da1";
+            var lat = this.props.lat;
+            var long = this.props.long;
+            var url = "https://api.forecast.io/forecast/" + key + "/" + lat + ',' + long;
+            // var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + key;
             $.ajax({
                 url: url,
                 dataType: 'json',
                 cache: true,
+                headers: {
+                    'Accept-Encoding': 'gzip'
+                },
                 success: function (data) {
                     this.setState({weatherData: data});
+                    console.log(data);
                 }.bind(this),
                 error: function (xhr, status, err)  {
                     console.log(url, err.toString());
@@ -155,19 +159,8 @@ const GetWeatherBtn = React.createClass({
             </a>
         );
     }
-});
 
-const InputStatus = React.createClass({
-    render: function()  {
-        return (
-            <div className="InputStatus">
-                Latitude: {this.props.lat}
-                Longitude: {this.props.long}
-            </div>
-        )
-    }
 });
-
 const SpinnerBlock = React.createClass({
     render: function()  {
         return (
