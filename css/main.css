@@ -33,10 +33,10 @@ html, body  {
 .spinnerBlock   {
     text-align: center;
     font-family: 'open sans', sans-serif;
-    transition: 1s;
     font-size: 40px;
     margin: 40px;
     display: none;
+    transition: 1.5s;
 }
 .navBar {
     transition: 1s;
@@ -68,11 +68,6 @@ html, body  {
     justify-content: center;
     padding: 20px;
     background: #fff;
-}
-.InputStatus    {
-    font-size: 30px;
-    font-family: 'open sans', sans-serif;
-    display: block;
 }
 .LocationInput   {
     font-family: 'open sans', sans-serif;
@@ -106,4 +101,7 @@ html, body  {
     margin: 10px;
     padding: 15px;
     letter-spacing: 2px;
+}
+.WeatherScreen    {
+    display: none;
 }
