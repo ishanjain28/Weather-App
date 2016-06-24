@@ -46,7 +46,12 @@ const EnterLocation = React.createClass({
                     getLocation={this.getLocation}
                     LocationInputTextWrapper={this.props.LocationInputTextWrapper}
                     />
-                <GetWeatherBtn lat={this.state.latitude} long={this.state.longitude} />
+                <GetWeatherBtn
+                    disabled={!(this.state.latitude && this.state.longitude)}
+                    lat={this.state.latitude}
+                    long={this.state.longitude}
+                    WeatherData={this.props.WeatherData}
+                    Address={this.props.Address} />
             </div>
         );
     }
