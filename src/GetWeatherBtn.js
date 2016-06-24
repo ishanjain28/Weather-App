@@ -19,12 +19,8 @@ const GetWeatherBtn = React.createClass({
                 $('.spinnerBlock').show('fast');
             });
             $(document).ajaxStop(function() {
-                $('.spinnerBlock').hide('fast', function()  {
-                    $(".navBar").hide("fast");
-                    $(".FrontLandingWrapper").hide('slow');
-                    $(".WeatherScreen").show("fast");
-                });
-        });
+                $('.spinnerBlock').hide('fast');
+            });
             $.ajax({
                 url: url,
                 dataType: 'json',

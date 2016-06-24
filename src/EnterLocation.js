@@ -14,6 +14,7 @@ const EnterLocation = React.createClass({
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
         });
+        this.props.getLocationFromEnterLocation(pos.coords.latitude, pos.coords.longitude);
         var success = "Location Successfully retrieved ";
         console.log(success + 'Lat: ' + pos.coords.latitude + ' Long: ' + pos.coords.longitude + ' Accuracy: ' + pos.coords.accuracy + 'meteres');
     },
@@ -39,8 +40,12 @@ const EnterLocation = React.createClass({
     },
     render: function()  {
         return (
-            <div className={this.props.class} id={this.props.id}>
-                <LocationInput getLocation={this.getLocation}/>
+            <div className={this.props.EnterLocation} id={this.props.id}>
+                <LocationInput
+                    LocationInputText={this.props.LocationInputText}
+                    getLocation={this.getLocation}
+                    LocationInputTextWrapper={this.props.LocationInputTextWrapper}
+                    />
                 <GetWeatherBtn lat={this.state.latitude} long={this.state.longitude} />
             </div>
         );

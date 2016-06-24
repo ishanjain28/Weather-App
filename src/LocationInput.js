@@ -16,12 +16,12 @@ const LocationInput = React.createClass({
         return (
             <div className="LocationInput">
             <label> Enter a Location: </label>
-            <div className="LocationInputTextWrapper">
+            <div className={this.props.LocationInputTextWrapper}>
                 <input
                     type="text"
                     value={this.state.LocationInputText}
                     onChange={this.handleChange}
-                    className="LocationInputText"
+                    className={this.props.LocationInputText}
                     placeholder="Example: 110001,IN"
                     />
                 <GetLocationBtn getLocation={this.props.getLocation}/>
