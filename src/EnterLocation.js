@@ -1,12 +1,14 @@
 import React from 'react';
 import LocationInput from './LocationInput';
 import GetWeatherBtn from './GetWeatherBtn';
+import $ from 'jquery';
 
 const EnterLocation = React.createClass({
     getInitialState: function () {
         return {
             latitude: '',
-            longitude: ''
+            longitude: '',
+            address: ''
         }
     },
     success: function(pos) {
@@ -14,7 +16,26 @@ const EnterLocation = React.createClass({
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
         });
-        this.props.getLocationFromEnterLocation(pos.coords.latitude, pos.coords.longitude);
+        var lat = pos.coords.latitude;
+        var long = pos.coords.longitude;
+        var GeoCodingKey = "AIzaSyDGH74KN8-W4RU-R1EBEPcjWX7fa1z4gYg";
+        var GeoCodingURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=" + GeoCodingKey;
+        $.ajax({
+            url: GeoCodingURL,
+            dataType: 'json',
+            cache: false,
+            success: function(Address) {
+                this.setState({
+                    address: Address
+                });
+                this.props.Address(Address);
+                console.log(Address);
+            }.bind(this),
+            error: function(xhr, status, err)   {
+                console.log(GeoCodingURL, err.toString());
+            }.bind(this),
+        });
+        this.props.sendLocationToWS(pos.coords.latitude, pos.coords.longitude);
         var success = "Location Successfully retrieved ";
         console.log(success + 'Lat: ' + pos.coords.latitude + ' Long: ' + pos.coords.longitude + ' Accuracy: ' + pos.coords.accuracy + 'meteres');
     },

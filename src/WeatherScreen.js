@@ -3,6 +3,8 @@ import React from 'react';
 import EnterLocation from './EnterLocation';
 import CurrentWeather from './CurrentWeather';
 
+
+if ( typeof DEBUG === "undefined" ) DEBUG = true; 
 // Root Component.
 const WeatherScreen = React.createClass({
     getInitialState: function() {
@@ -42,7 +44,7 @@ const Navbar = React.createClass({
             WeatherData: ''
         }
     },
-    getLocationFromEnterLocation: function(lat, long)    {
+    sendLocationToWS: function(lat, long)    {
         this.setState({
             latitude: lat,
             longitude: long
@@ -55,7 +57,7 @@ const Navbar = React.createClass({
                  <i className="fa fa-space-shuttle fa-2x fa-rotate-270"></i> Weather
              </div>
              <EnterLocation
-                 getLocationFromEnterLocation={this.getLocationFromEnterLocation}
+                 sendLocationToWS={this.sendLocationToWS}
                  LocationInputText="WSLocationInputText"
                  EnterLocation="WSEnterLocation"
                  id="WSEnterLocation"
@@ -67,7 +69,7 @@ const Navbar = React.createClass({
                 latitude={this.state.latitude}
                 longitude={this.state.longitude}
                 Address={this.props.Address}
-            />
+             />
          </div>
        );
    }
@@ -76,7 +78,7 @@ const Navbar = React.createClass({
 const CurrentLocation = React.createClass({
     render: function()  {
         //TODO: Figure out a way to print Address from lat, long..
-        var address= null;
+        var address = null;
         var displayValue = 'none';
         if(this.props.latitude && this.props.longitude) {
             displayValue = "inline-block";
