@@ -52,7 +52,7 @@ const LocationInput = React.createClass({
                 console.error(GeoCodeURL, err.toString());
             }
         });
-        // Now get Weather Data...
+        // Now get Weather Data... This doesn't seems to work... :(...
         var Hours = parseInt(new Date().getHours());
         var Minutes = parseInt(new Date().getMinutes());
         var useHour = (Hours.length == 1 ? "0" + Hours : Hours).toString();
@@ -91,10 +91,7 @@ const LocationInput = React.createClass({
                             onChange={this.handleChange}
                         />
                         <a href="#" className="getGeolocationIconWrapper" onClick={this.getGeolocation}>
-                            <span className="fa-stack fa-lg getGeolocationIcon" onClick={this.props.getGeolocation}>
-                                <i className="fa fa-circle-o fa-stack-2x"></i>
-                                <i className="fa fa-circle fa-stack-1x"></i>
-                            </span>
+                            <i className="fa fa-location-arrow location-icon"></i>
                         </a>
                     </div>
                 </form>

@@ -38,12 +38,17 @@ html, body  {
     align-items: center;
 }
 .Header    {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 3px;
-    text-align: center;
     margin: 3px;
     margin-left: 10px;
     font-size: 25px;
     letter-spacing: 3px;
+}
+.brandIcon    {
+    padding: 10px;
 }
 .TemperatureUnit    {
     padding: 4px;
@@ -83,6 +88,7 @@ html, body  {
 .getGeolocationIconWrapper, getGeolocationIconWrapper:active, getGeolocationIconWrapper:visited    {
     text-decoration: none;
     color: #fff;
+    padding-right: 5px;
     transition: 1s;
 }
 .getGeolocationIconWrapper:hover    {
@@ -97,7 +103,6 @@ html, body  {
     padding: 10px;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
 }
 .CurrentWeather    {
     display: flex;
@@ -106,23 +111,69 @@ html, body  {
     margin: 10px;
 }
 .LocationInfo    {
+    padding: 3px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
-    height: 100%;
-}
-.CityStateCountry   {
+    margin: 11px;
     font-size: 35px;
-    margin: 2px;
+}
+.TemperatureInfo    {
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.TemperatureWrapper    {
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    align-items: center;
+}
+.Wicon    {
+    color: #fff;
+    margin: 3px;
+    padding: 2px;
+}
+.Temperature    {
+    margin: 3px;
+    font-size: 96px;
+    font-family: sans-serif;
+}
+.CurrentTemperatureUnit    {
+    margin: 3px;
+    font-size: 90px;
+    font-family: sans-serif;
 }
 .UpdateTime    {
-    margin: 2px;
-    font-size: 15px;
+    margin: 3px;
+    padding: 3px;
+    font-size: 12px;
 }
-.Timezone    {
-    margin: 2px;
+.CurrentWeatherInfo    {
+    display: flex;
+    padding: 3px;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
 }
-.Offset    {
-    margin: 2px;
+.CurrentWeatherSummary    {
+    letter-spacing: 1px;
+    margin: 0px 4px 4px 4px;
+    font-size: 32px;
+}
+.CurrentWeatherExtraDetails    {
+    display: flex;
+    flex-direction: column;
+}
+.CurrentWeatherEDRow    {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.CWRowElement    {
+    font-size: 17px;
+    padding: 4px;
 }

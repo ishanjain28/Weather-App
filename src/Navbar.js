@@ -25,6 +25,7 @@ const Header = React.createClass({
     render: function()  {
         return (
             <div className="Header">
+                <img width="64" height="64" className="brandIcon" src="icons/cloudy.svg"></img>
                 WEATHER
             </div>
         );
