@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 const CurrentWeather = React.createClass({
     render: function()  {
@@ -82,23 +83,47 @@ const TemperatureInfo = React.createClass({
 const CurrentWeatherInfo = React.createClass({
     render: function()  {
         var ConvertTemp = (tem) => TempUnit == "C" ? (Math.round(((tem-32)*5)/9)) : tem;
-        var CurrentWeatherSummary = "<Current Weather Summary>";
-        var ApparentTemperature = "Feels like ";
+        var CurrentWeatherSummary = "<CurrentWeatherSummary>";
+        var ApparentTemperature = "Feels like -- -";
         var Wind = "Wind ";
-        var Visibility = "Visibility ";
-        var Barometer = "Barometer ";
-        var Humidity = "Humidity ";
-        var DewPoint = "Dew Point ";
+        var Visibility = " ";
+        var Barometer = " ";
+        var Humidity = " ";
+        var DewPoint = " ";
         if(this.props.WeatherData)  {
             var TempUnit = this.props.TempUnit;
             var CurrentWeather = this.props.WeatherData.currently;
             CurrentWeatherSummary = CurrentWeather.summary;
             ApparentTemperature = "Feels like " + ConvertTemp(parseInt(CurrentWeather.apparentTemperature)) + " " + TempUnit;
-            Wind += CurrentWeather.windSpeed;
-            Visibility += CurrentWeather.visibility + "kms";
-            Barometer += CurrentWeather.pressure;
-            Humidity = "Humidty " + (CurrentWeather.humidity * 100) + "%";
-            DewPoint += CurrentWeather.dewPoint;
+
+            if(CurrentWeather.windSpeed)    {
+                Wind += CurrentWeather.windSpeed;
+            } else {
+                $('.Wind').css('display', 'none')
+            }
+            if(CurrentWeather.visibility)   {
+            Visibility = CurrentWeather.visibility + "miles";
+            } else {
+                $('.Visibility').css('display', 'none');
+            }
+
+            if(CurrentWeather.pressure) {
+                Barometer = "Barometer " + CurrentWeather.pressure;
+            } else {
+                $('.Barometer').css('display', 'none')
+            }
+
+            if(CurrentWeather.humidity) {
+                Humidity = "Humidity " + (CurrentWeather.humidity * 100) + "%";
+            } else {
+                $('.Humidity').css('display', 'none')
+            }
+
+            if(CurrentWeather.dewPoint) {
+                DewPoint = "Dew Point " + CurrentWeather.dewPoint;
+            } else {
+                $('.DewPoint').css('display', 'none')
+            }
         }
         return (
             <div className="CurrentWeatherInfo">

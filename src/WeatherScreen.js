@@ -1,7 +1,7 @@
 // Necessary Import Statements...
 import React from 'react';
 import CurrentWeather from './CurrentWeather';
-
+import DailyWeather from './DailyWeather';
 
 const WeatherScreen = React.createClass({
     render: function()  {
@@ -12,6 +12,9 @@ const WeatherScreen = React.createClass({
                     UpdateTime={this.props.UpdateTime}
                     WeatherData={this.props.WeatherData}
                     TempUnit={this.props.TempUnit}
+                />
+                <DailyWeather
+                    WeatherData={this.props.WeatherData}
                 />
             </div>
         );
