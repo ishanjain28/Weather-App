@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A web app to show weather",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js && google-chrome http://locahost:3000",
     "lint": "eslint src"
   },
   "repository": {
