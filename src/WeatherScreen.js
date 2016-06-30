@@ -15,6 +15,7 @@ const WeatherScreen = React.createClass({
                 />
                 <DailyWeather
                     WeatherData={this.props.WeatherData}
+                    TempUnit={this.props.TempUnit}
                 />
             </div>
         );

@@ -37,6 +37,7 @@
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.6.2",
     "jquery": "^3.0.0",
+    "moment": "^2.13.0",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
@@ -46,6 +47,7 @@
   },
   "dependencies": {
     "jquery": "^3.0.0",
+    "moment": "^2.13.0",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0"

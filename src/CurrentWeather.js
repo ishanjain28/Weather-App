@@ -102,7 +102,7 @@ const CurrentWeatherInfo = React.createClass({
                 $('.Wind').css('display', 'none')
             }
             if(CurrentWeather.visibility)   {
-            Visibility = CurrentWeather.visibility + "miles";
+            Visibility = "Visibility " + CurrentWeather.visibility + "miles";
             } else {
                 $('.Visibility').css('display', 'none');
             }
